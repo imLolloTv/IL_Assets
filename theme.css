@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* ==========================================================================
+   IL / nloreee - Master Design System Theme
+   Per cambiare colore a tutto il server: modifica solo --il-primary-h, s, l
+   oppure cambia direttamente --il-primary / --il-primary-rgb
+   ========================================================================== */
+
+:root {
+    /* 🎨 Tipografia Standard */
+    --il-font-main: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --il-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* 🎨 Configurazione Colore Primario (Default: Rosso, facilmente modificabile) */
+    /* HSL: Hue (0 = Rosso, 210 = Blu, 270 = Viola, 145 = Verde, 25 = Arancione) */
+    --il-primary-h: 0;
+    --il-primary-s: 75%;
+    --il-primary-l: 50%;
+
+    /* Colori Primari derivati */
+    --il-primary: hsl(var(--il-primary-h), var(--il-primary-s), var(--il-primary-l));
+    --il-primary-hover: hsl(var(--il-primary-h), var(--il-primary-s), 58%);
+    --il-primary-active: hsl(var(--il-primary-h), var(--il-primary-s), 42%);
+    --il-primary-rgb: 220, 38, 38;
+
+    /* Trasparenze / Glow del Primario */
+    --il-primary-10: hsla(var(--il-primary-h), var(--il-primary-s), var(--il-primary-l), 0.10);
+    --il-primary-20: hsla(var(--il-primary-h), var(--il-primary-s), var(--il-primary-l), 0.20);
+    --il-primary-40: hsla(var(--il-primary-h), var(--il-primary-s), var(--il-primary-l), 0.40);
+    --il-primary-80: hsla(var(--il-primary-h), var(--il-primary-s), var(--il-primary-l), 0.80);
+    --il-primary-glow: 0 0 20px hsla(var(--il-primary-h), var(--il-primary-s), var(--il-primary-l), 0.45);
+
+    /* 🌑 Sfondi Dark & Glassmorphism */
+    --il-bg-base: #0b0c10;
+    --il-bg-surface: rgba(18, 19, 24, 0.85);
+    --il-bg-card: rgba(26, 28, 35, 0.75);
+    --il-bg-input: rgba(12, 13, 17, 0.65);
+    --il-bg-hover: rgba(255, 255, 255, 0.06);
+
+    /* 🌌 Gradiente di sfondo firma IL (dal rosso/colore primario verso il nero scuro) */
+    --il-radial-bg: radial-gradient(circle at center, hsla(var(--il-primary-h), 80%, 25%, 0.75) 0%, rgba(10, 10, 14, 0.95) 100%);
+    --il-linear-header: linear-gradient(135deg, hsla(var(--il-primary-h), 75%, 45%, 0.9) 0%, hsla(var(--il-primary-h), 85%, 20%, 0.95) 100%);
+
+    /* ⚪ Testi */
+    --il-text-main: #f3f4f6;
+    --il-text-secondary: rgba(243, 244, 246, 0.70);
+    --il-text-muted: rgba(243, 244, 246, 0.40);
+
+    /* 📏 Geometria & Bordi */
+    --il-radius-sm: 6px;
+    --il-radius-md: 10px;
+    --il-radius-lg: 16px;
+    --il-radius-full: 9999px;
+
+    --il-border-subtle: 1px solid rgba(255, 255, 255, 0.08);
+    --il-border-card: 1px solid rgba(255, 255, 255, 0.12);
+    --il-border-active: 1px solid var(--il-primary);
+
+    /* ✨ Ombre & Effetti */
+    --il-blur: blur(14px);
+    --il-shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+    --il-shadow-button: 0 4px 14px 0 hsla(var(--il-primary-h), var(--il-primary-s), var(--il-primary-l), 0.35);
+
+    /* 🚦 Colori di Stato Utilità */
+    --il-success: #10b981;
+    --il-warning: #f59e0b;
+    --il-danger: #ef4444;
+    --il-info: #3b82f6;
+}
+
+/* Stili Globali Applicabili */
+body, * {
+    font-family: var(--il-font-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Unificata */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--il-primary-40);
+    border-radius: var(--il-radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--il-primary);
+}
